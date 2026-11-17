@@ -8,15 +8,6 @@ from config import BASE_URL
 
 
 @pytest.fixture(scope="session")
-def browser_type_launch_args(browser_type_launch_args):
-    return {
-        **browser_type_launch_args,
-        "executable_path": "/ms-playwright/chromium-1255/chrome-linux64/chrome",
-        "headless": True,
-    }
-
-
-@pytest.fixture(scope="session")
 def browser_context_args(browser_context_args):
     return {
         **browser_context_args,
