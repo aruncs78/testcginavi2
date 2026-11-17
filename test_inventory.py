@@ -44,7 +44,7 @@ def test_add_multiple_products_to_cart(app_page):
 def test_open_product_details_and_return_to_inventory(app_page):
     inventory = login(app_page)
     app_page.locator('[data-test="item-4-title-link"]').click()
-    expect(app_page.locator('[data-test="inventory-item-name"]')).to_have_text('Sauce Labs Backpack')
+    expect(app_page.locator('[data-test="inventory-item-name"]').first).to_have_text('Sauce Labs Backpack')
     app_page.locator('[data-test="back-to-products"]').click()
     inventory.assert_loaded()
 
